@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const black = Color(0xFF101823);
 const scaffoldBackground = Color(0xFFEFE1C4);
-const black_second = Colors.black;
+const appbarColor = Color(0xFFD7A640);
 const white = Color(0xFFFFFFFF);
 const grey = Color(0xFF787878);
 
@@ -13,7 +13,7 @@ class AppTheme {
     // Scaffold
     scaffoldBackgroundColor: scaffoldBackground,
     // Appbar
-    appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent,elevation: 0.1),
+    appBarTheme: const AppBarTheme(backgroundColor: appbarColor,elevation: 0.1),
     // Text
     textTheme: TextTheme(
       headline1: TextStyle(
