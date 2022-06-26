@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../core/profile_client.dart';
+
 class SearchBar extends StatefulWidget {
   const SearchBar({Key? key}) : super(key: key);
 
@@ -23,7 +25,9 @@ class _SearchBarState extends State<SearchBar> {
       child: TextField(
         controller: controller,
         onChanged: (value) {
-
+          ProfileClient().getPlayer('PL0JV808').then((value) {
+            print(value.name);
+          });
         },
         decoration: InputDecoration(
           border: OutlineInputBorder(
