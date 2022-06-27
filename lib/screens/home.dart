@@ -1,6 +1,6 @@
 import 'package:clash_of_clans_app/constants/app_string.dart';
 import 'package:clash_of_clans_app/core/profile_client.dart';
-import 'package:clash_of_clans_app/widgets/home/searchbar.dart';
+import 'package:clash_of_clans_app/widgets/home/search/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

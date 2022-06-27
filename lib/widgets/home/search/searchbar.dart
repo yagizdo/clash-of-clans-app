@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../core/profile_client.dart';
+import '../../../core/profile_client.dart';
 import 'custom_debouncer.dart';
 
 class SearchBar extends StatefulWidget {
