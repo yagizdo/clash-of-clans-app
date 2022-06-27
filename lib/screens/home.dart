@@ -14,7 +14,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   void initState() {
-    ProfileClient().getPlayer('PL0JV808');
+    //ProfileClient().getPlayer('PL0JV808');
     super.initState();
   }
   @override
