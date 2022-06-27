@@ -84,9 +84,9 @@ class _SearchBarState extends State<SearchBar> {
         decoration: InputDecoration(
           errorText: _errorText,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20.w),
+            borderRadius: BorderRadius.circular(10.w),
           ),
-          labelText: 'Search Account with #tag',
+          labelText: 'Search Account with tag',
         ),
       ),
     );
