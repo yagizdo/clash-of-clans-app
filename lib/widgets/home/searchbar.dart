@@ -45,6 +45,9 @@ class _SearchBarState extends State<SearchBar> {
     if (_valueText.length < 6 && _focusNode.hasFocus) {
       return 'Must be at least 6 characters';
     }
+    if (_valueText.contains('#') && _focusNode.hasFocus) {
+      return 'Must not contain #';
+    }
     // If no error, return null
     return null;
   }
