@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../core/profileStore.dart';
 import '../../../core/profile_client.dart';
 import 'custom_debouncer.dart';
 
@@ -18,8 +19,8 @@ class _SearchBarState extends State<SearchBar> {
   // Debouncer for the search bar
   Debouncer debouncer = Debouncer(milliseconds: 500);
 
-// Profile client for the search bar
-  ProfileClient profileClient = ProfileClient();
+  // Profile Store for the search bar
+  final _profileStore = ProfileStore(ProfileClient());
 
   // focus node for the search bar
   FocusNode _focusNode = FocusNode();
@@ -27,9 +28,9 @@ class _SearchBarState extends State<SearchBar> {
   // Text
   String _valueText = '';
 
-  @override
-  void initState() {
-    super.initState();
+  // Get Profile data
+  Future<void> _getPlayerData(String tag) async {
+    await _profileStore.fetchProfile(tag);
   }
 
   @override
@@ -72,9 +73,7 @@ class _SearchBarState extends State<SearchBar> {
             if (_errorText == null) {
               // Run the debouncer
               debouncer.run(() {
-                profileClient.getPlayer(value).then((value) {
-                  print(value.name);
-                });
+                _getPlayerData(value);
               });
             }
           });
