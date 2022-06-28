@@ -23,6 +23,7 @@ abstract class _ProfileStore with Store {
   @action
   // fetch profile data
   Future<void> fetchProfile(String tag) async {
+
     // set loading state to true
     isLoading = true;
 
@@ -34,7 +35,6 @@ abstract class _ProfileStore with Store {
     // set profile data
     profile = profileObject;
 
-    print(profile?.name);
     // set loading state to false when done
     isLoading = false;
   }
