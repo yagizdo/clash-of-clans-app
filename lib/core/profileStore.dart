@@ -17,9 +17,12 @@ abstract class _ProfileStore with Store {
   // loading state
   bool isLoading = false;
 
+  @observable
+  Profile? profile;
+
   @action
   // fetch profile data
-  Future<Profile> fetchProfile(String tag) async {
+  Future<void> fetchProfile(String tag) async {
     // set loading state to true
     isLoading = true;
 
@@ -27,12 +30,9 @@ abstract class _ProfileStore with Store {
     final profileData = await _client.getPlayer(tag);
 
     // set profile data
-    Profile profile = profileData;
+    profile = profileData;
 
     // set loading state to false when done
     isLoading = false;
-
-    // return profile data
-    return profile;
   }
 }

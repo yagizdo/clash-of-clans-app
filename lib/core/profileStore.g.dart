@@ -25,18 +25,35 @@ mixin _$ProfileStore on _ProfileStore, Store {
     });
   }
 
+  late final _$profileAtom =
+      Atom(name: '_ProfileStore.profile', context: context);
+
+  @override
+  Profile? get profile {
+    _$profileAtom.reportRead();
+    return super.profile;
+  }
+
+  @override
+  set profile(Profile? value) {
+    _$profileAtom.reportWrite(value, super.profile, () {
+      super.profile = value;
+    });
+  }
+
   late final _$fetchProfileAsyncAction =
       AsyncAction('_ProfileStore.fetchProfile', context: context);
 
   @override
-  Future<Profile> fetchProfile(String tag) {
+  Future<void> fetchProfile(String tag) {
     return _$fetchProfileAsyncAction.run(() => super.fetchProfile(tag));
   }
 
   @override
   String toString() {
     return '''
-isLoading: ${isLoading}
+isLoading: ${isLoading},
+profile: ${profile}
     ''';
   }
 }
