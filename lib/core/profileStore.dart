@@ -15,7 +15,7 @@ abstract class _ProfileStore with Store {
 
   @observable
   // profile data object
-  Profile profile;
+  late Profile profile;
 
   @observable
   // loading state
