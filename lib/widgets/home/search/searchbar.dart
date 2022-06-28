@@ -1,3 +1,4 @@
+import 'package:clash_of_clans_app/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -20,7 +21,7 @@ class _SearchBarState extends State<SearchBar> {
   Debouncer debouncer = Debouncer(milliseconds: 500);
 
   // Profile Store for the search bar
-  final _profileStore = ProfileStore(ProfileClient());
+  final _profileStore = getIt.get<ProfileStore>();
 
   // focus node for the search bar
   FocusNode _focusNode = FocusNode();

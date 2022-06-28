@@ -29,9 +29,12 @@ abstract class _ProfileStore with Store {
     // fetch profile data
     final profileData = await _client.getPlayer(tag);
 
-    // set profile data
-    profile = profileData;
+    Profile profileObject = profileData;
 
+    // set profile data
+    profile = profileObject;
+
+    print(profile?.name);
     // set loading state to false when done
     isLoading = false;
   }
