@@ -17,6 +17,7 @@ class ProfileClient extends ApiClient {
 
     //print(profile.heroes![0].name);
 
+
     // Return the profile object
     return profile;
   }

@@ -22,6 +22,7 @@ class _HomeState extends State<Home> {
     //_profileStore.fetchProfile('PL0JV808');
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,10 +31,20 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
+
+          // SizeBox is used to add space between widgets
           SizedBox(height: 20.h),
-          SearchBar(),
-          Observer(builder: (_){
-            return Text(_profileStore.profile?.name ?? 'No name');
+
+          // SearchBar widget
+          const SearchBar(),
+
+          // Profile Part
+          Observer(builder: (_) {
+            return _profileStore.isLoading
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Text(_profileStore.profile?.name ?? 'No name');
           }),
         ],
       ),

@@ -18,7 +18,7 @@ class _SearchBarState extends State<SearchBar> {
   final TextEditingController _controller = TextEditingController();
 
   // Debouncer for the search bar
-  Debouncer debouncer = Debouncer(milliseconds: 500);
+  Debouncer debouncer = Debouncer(milliseconds: 4500);
 
   // Profile Store for the search bar
   final _profileStore = getIt.get<ProfileStore>();
