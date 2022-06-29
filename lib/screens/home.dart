@@ -2,6 +2,7 @@ import 'package:clash_of_clans_app/constants/app_string.dart';
 import 'package:clash_of_clans_app/core/profileStore.dart';
 import 'package:clash_of_clans_app/core/profile_client.dart';
 import 'package:clash_of_clans_app/locator.dart';
+import 'package:clash_of_clans_app/widgets/home/profile_ui/profile_comp.dart';
 import 'package:clash_of_clans_app/widgets/home/search/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -30,6 +31,7 @@ class _HomeState extends State<Home> {
         title: const Text(homeTitle),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
           // SizeBox is used to add space between widgets
@@ -44,7 +46,14 @@ class _HomeState extends State<Home> {
                 ? const Center(
                     child: CircularProgressIndicator(),
                   )
-                : Text(_profileStore.profile?.name ?? 'No name');
+                : Padding(
+                  padding: EdgeInsets.all(10.w),
+                  child: Column(
+              children: [
+                  ProfileComp(profile: _profileStore.profile,),
+              ],
+            ),
+                );
           }),
         ],
       ),
