@@ -1,3 +1,4 @@
+import 'package:clash_of_clans_app/widgets/home/profile_ui/heroes_comp.dart';
 import 'package:clash_of_clans_app/widgets/home/profile_ui/profile_clan_comp.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,6 +17,7 @@ class ProfileComp extends StatelessWidget {
       children: [
         FirstComp(profile: profile),
         SizedBox(height: 20.h),
+        HeroesComp(profile: profile,),
       ],
     );
   }

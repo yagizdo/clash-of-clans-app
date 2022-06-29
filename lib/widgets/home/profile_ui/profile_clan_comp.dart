@@ -14,7 +14,7 @@ class FirstComp extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            height: 0.31.sh,
+            height: 0.30.sh,
             color: appbarColor,
             child: Padding(
               padding: EdgeInsets.all(10.w),
@@ -88,7 +88,7 @@ class FirstComp extends StatelessWidget {
         // Clan Part
         Expanded(
           child: Container(
-            height: 0.31.sh,
+            height: 0.30.sh,
             color: appbarColor,
             child: Padding(
               padding: EdgeInsets.all(10.w),
