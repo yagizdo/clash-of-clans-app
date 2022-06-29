@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../constants/app_colors.dart';
 import '../../../model/profile.dart';
 
-class FirstComp extends StatelessWidget {
-  FirstComp({Key? key,required this.profile}) : super(key: key);
+class ProfileClanComp extends StatelessWidget {
+  ProfileClanComp({Key? key,required this.profile}) : super(key: key);
   Profile? profile;
 
   @override

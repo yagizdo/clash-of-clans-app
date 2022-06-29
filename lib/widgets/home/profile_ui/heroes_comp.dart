@@ -18,7 +18,11 @@ class HeroesComp extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+
+          // Sizedbox for top padding
           SizedBox(height: 15.h),
+
+          // Hero title
           Center(
             child: Text(
               'Heroes',
@@ -30,7 +34,9 @@ class HeroesComp extends StatelessWidget {
             ),
           ),
           SizedBox(height: 10.h),
-          Container(
+
+          // Hero Gridview
+          SizedBox(
             width: double.infinity,
             height: 0.26.sh,
             child: GridView.builder(

@@ -15,8 +15,13 @@ class ProfileComp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FirstComp(profile: profile),
+        // Profile and clan info section
+        ProfileClanComp(profile: profile),
+
+        // Sizedbox to separate the profile and clan info section from the heroes section
         SizedBox(height: 20.h),
+
+        // Heroes section
         HeroesComp(profile: profile,),
       ],
     );
