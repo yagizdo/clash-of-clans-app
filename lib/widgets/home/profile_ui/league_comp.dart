@@ -32,14 +32,14 @@ class LeagueComp extends StatelessWidget {
               height: 10.h,
             ),
             Text(
-              'Trophies : ${profile?.trophies}' ?? 'No Data',
+              'Trophies : ${profile?.trophies}',
               style: TextStyle(fontSize: 17.sp),
             ),
             SizedBox(
               height: 10.h,
             ),
             Text(
-              'Best Trophies : ${profile?.bestTrophies}' ?? 'No Data',
+              'Best Trophies : ${profile?.bestTrophies}',
               style: TextStyle(fontSize: 17.sp),
             ),
           ],

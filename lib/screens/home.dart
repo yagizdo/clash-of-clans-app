@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
                   padding: EdgeInsets.all(10.w),
                   child: Column(
               children: [
-                  ProfileComp(profile: _profileStore.profile,),
+                  _profileStore.profile == null ? Container() :ProfileComp(profile: _profileStore.profile,),
               ],
             ),
                 );

@@ -34,28 +34,28 @@ class FirstComp extends StatelessWidget {
                     height: 10.h,
                   ),
                   Text(
-                    'Name : ${profile?.name}' ?? 'No Data',
+                    'Name : ${profile?.name}',
                     style: TextStyle(fontSize: 15.sp),
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   Text(
-                    'Tag : ${profile?.tag}' ?? 'No Data',
+                    'Tag : ${profile?.tag}',
                     style: TextStyle(fontSize: 15.sp),
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   Text(
-                    'Level : ${profile?.expLevel}' ?? 'No Data',
+                    'Level : ${profile?.expLevel}',
                     style: TextStyle(fontSize: 15.sp),
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   Text(
-                    'Town Hall Level : ${profile?.townHallLevel}' ?? 'No Data',
+                    'Town Hall Level : ${profile?.townHallLevel}',
                     style: TextStyle(fontSize: 15.sp),
                   ),
                 ],
@@ -99,7 +99,7 @@ class FirstComp extends StatelessWidget {
                         width: 10.w,
                       ),
                       Text(
-                        '${profile?.clan?.name}' ?? 'No Data',
+                        '${profile?.clan?.name}',
                         style: TextStyle(fontSize: 18.sp),
                       ),
                     ],
@@ -108,14 +108,14 @@ class FirstComp extends StatelessWidget {
                     height: 10.h,
                   ),
                   Text(
-                    'Tag : ${profile?.clan?.tag}' ?? 'No Data',
+                    'Tag : ${profile?.clan?.tag}',
                     style: TextStyle(fontSize: 16.sp),
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   Text(
-                    'Level : ${profile?.clan?.clanLevel}' ?? 'No Data',
+                    'Level : ${profile?.clan?.clanLevel}',
                     style: TextStyle(fontSize: 16.sp),
                   ),
                   SizedBox(
