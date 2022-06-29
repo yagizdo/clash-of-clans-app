@@ -10,16 +10,15 @@ class ProfileClient extends ApiClient {
     super.dio.options.headers['Authorization'] = 'Bearer ${super.apiKey}';
 
     // Get the player profile
-    final response = await dio.get('${super.baseUrl}v1/players/%23$tag');
+    try {
+      final response = await dio.get('${super.baseUrl}v1/players/%23$tag');
 
-    // Convert the response to a profile object
-    final profile = Profile.fromJson(response.data);
-
-    //print(profile.heroes![0].name);
-
-
-    // Return the profile object
-    return profile;
+      // Convert the response to a profile object
+      final profile = Profile.fromJson(response.data);
+      return profile;
+    } catch (e) {
+      return 'Error: ${e.toString()}';
+    }
   }
 }
 

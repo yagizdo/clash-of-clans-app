@@ -20,6 +20,9 @@ abstract class _ProfileStore with Store {
   @observable
   Profile? profile;
 
+  @observable
+  bool isError = false;
+
   @action
   // fetch profile data
   Future<void> fetchProfile(String tag) async {
@@ -30,10 +33,17 @@ abstract class _ProfileStore with Store {
     // fetch profile data
     final profileData = await _client.getPlayer(tag);
 
-    Profile profileObject = profileData;
+    if(profileData.runtimeType != String && profileData != null) {
+      // set profile data
+      Profile profileObject = profileData;
+      // set profile data
+      profile = profileObject;
 
-    // set profile data
-    profile = profileObject;
+      // error state is false
+      isError = false;
+    } else {
+     isError = true;
+    }
 
     // set loading state to false when done
     isLoading = false;

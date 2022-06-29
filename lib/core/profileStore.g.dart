@@ -41,6 +41,22 @@ mixin _$ProfileStore on _ProfileStore, Store {
     });
   }
 
+  late final _$isErrorAtom =
+      Atom(name: '_ProfileStore.isError', context: context);
+
+  @override
+  bool get isError {
+    _$isErrorAtom.reportRead();
+    return super.isError;
+  }
+
+  @override
+  set isError(bool value) {
+    _$isErrorAtom.reportWrite(value, super.isError, () {
+      super.isError = value;
+    });
+  }
+
   late final _$fetchProfileAsyncAction =
       AsyncAction('_ProfileStore.fetchProfile', context: context);
 
@@ -53,7 +69,8 @@ mixin _$ProfileStore on _ProfileStore, Store {
   String toString() {
     return '''
 isLoading: ${isLoading},
-profile: ${profile}
+profile: ${profile},
+isError: ${isError}
     ''';
   }
 }
