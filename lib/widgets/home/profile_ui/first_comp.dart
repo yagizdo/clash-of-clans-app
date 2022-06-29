@@ -58,20 +58,6 @@ class FirstComp extends StatelessWidget {
                     'Town Hall Level : ${profile?.townHallLevel}' ?? 'No Data',
                     style: TextStyle(fontSize: 15.sp),
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Text(
-                    'Trophies : ${profile?.trophies}' ?? 'No Data',
-                    style: TextStyle(fontSize: 15.sp),
-                  ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
-                  Text(
-                    'Best Trophies : ${profile?.bestTrophies}' ?? 'No Data',
-                    style: TextStyle(fontSize: 15.sp),
-                  ),
                 ],
               ),
             ),
