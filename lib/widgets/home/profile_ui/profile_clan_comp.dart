@@ -14,7 +14,7 @@ class FirstComp extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            height: 0.3.sh,
+            height: 0.31.sh,
             color: appbarColor,
             child: Padding(
               padding: EdgeInsets.all(10.w),
@@ -48,14 +48,32 @@ class FirstComp extends StatelessWidget {
                     height: 10.h,
                   ),
                   Text(
-                    'Level : ${profile?.expLevel}',
+                    'Profile Level : ${profile?.expLevel}',
                     style: TextStyle(fontSize: 15.sp),
                   ),
                   SizedBox(
                     height: 10.h,
                   ),
                   Text(
-                    'Town Hall Level : ${profile?.townHallLevel}',
+                    'TH Level : ${profile?.townHallLevel}',
+                    style: TextStyle(fontSize: 15.sp),
+                  ),
+                  SizedBox(
+                    height: 10.h,
+                  ),
+                  Text(
+                    'Trophies : ${profile?.trophies}',
+                    style: TextStyle(fontSize: 15.sp),
+                  ),
+                  Row(
+                    children: [
+                      Text('${profile?.league?.name}', style: TextStyle(fontSize: 14.sp,color: Colors.black),),
+                      SizedBox(width: 5.w),
+                      Image.network(profile?.league?.iconUrls?.tiny ?? '',),
+                    ],
+                  ),
+                  Text(
+                    'Best Trophies : ${profile?.bestTrophies}',
                     style: TextStyle(fontSize: 15.sp),
                   ),
                 ],
@@ -70,7 +88,7 @@ class FirstComp extends StatelessWidget {
         // Clan Part
         Expanded(
           child: Container(
-            height: 0.3.sh,
+            height: 0.31.sh,
             color: appbarColor,
             child: Padding(
               padding: EdgeInsets.all(10.w),
@@ -100,7 +118,7 @@ class FirstComp extends StatelessWidget {
                       ),
                       Text(
                         '${profile?.clan?.name}',
-                        style: TextStyle(fontSize: 18.sp),
+                        style: TextStyle(fontSize: 16.sp),
                       ),
                     ],
                   ),

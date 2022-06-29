@@ -17,7 +17,6 @@ class ProfileComp extends StatelessWidget {
       children: [
         FirstComp(profile: profile),
         SizedBox(height: 20.h),
-        LeagueComp(profile: profile),
       ],
     );
   }
