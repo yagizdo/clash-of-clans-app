@@ -20,12 +20,6 @@ class _HomeState extends State<Home> {
   final ProfileStore _profileStore = getIt.get<ProfileStore>();
 
   @override
-  void initState() {
-    //_profileStore.fetchProfile('PL0JV808');
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
