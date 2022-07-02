@@ -18,7 +18,7 @@ class ClanSection extends StatelessWidget {
     Profile? _profile = _profileStore.profile;
 
     return Container(
-      width: 222.w,
+      width: 215.w,
       height: 103.h,
 
       // Rounded Corners

@@ -47,7 +47,7 @@ class ProfileSection extends StatelessWidget {
 
             // Level of the player
             Padding(
-              padding: EdgeInsets.only(right: 26.w),
+              padding: EdgeInsets.only(right: 20.w),
               child: Column(
                 children: [
                   // Level Image Stack

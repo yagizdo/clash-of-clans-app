@@ -6,6 +6,7 @@ import '../constants/app_colors.dart';
 import '../core/profileStore.dart';
 import '../locator.dart';
 import '../widgets/profile/clan_section.dart';
+import '../widgets/profile/leauge_section.dart';
 import '../widgets/profile/profile_section.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -28,20 +29,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: 10.h,left: 26.w),
+          padding: EdgeInsets.only(top: 10.h,left: 20.w),
           child: Column(
             children: [
               const ProfileSection(),
 
               // SizedBox to make space between the sections
               SizedBox(
-                height: 20.h,
+                height: 15.h,
               ),
 
               // Clan and Leugue Section
               Row(
                 children: [
                   const ClanSection(),
+                  SizedBox(
+                    width: 20.w,
+                  ),
+                  const LeagueSection(),
                 ],
               ),
             ],
