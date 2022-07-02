@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../constants/app_colors.dart';
-import '../../../model/profile.dart';
+import '../../constants/app_colors.dart';
+import '../../model/profile.dart';
 
 class ProfileSection extends StatelessWidget {
   ProfileSection({Key? key,required this.profile}) : super(key: key);

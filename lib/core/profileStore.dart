@@ -47,5 +47,7 @@ abstract class _ProfileStore with Store {
 
     // set loading state to false when done
     isLoading = false;
+
+    print(profile?.name);
   }
 }

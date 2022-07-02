@@ -1,4 +1,4 @@
-import 'package:clash_of_clans_app/screens/home.dart';
+import 'package:clash_of_clans_app/screens/search_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? child) => MaterialApp(
         title: appName,
         theme: AppTheme().appTheme,
-        home: const Home(),
+        home: const SearchScreen(),
       ),
     );
   }
