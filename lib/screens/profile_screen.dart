@@ -28,7 +28,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(top: 10.h,left: 26.w),
-          child: ProfileSection(),
+          child: const ProfileSection(),
         ),
       ),
     );
