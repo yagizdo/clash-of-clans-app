@@ -21,6 +21,7 @@ class _SearchScreenState extends State<SearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        // Constrainedbox is used to make the search bar take up the entire height of the screen.
         child: ConstrainedBox(
           constraints: BoxConstraints(
             minHeight: MediaQuery.of(context).size.height,
@@ -34,6 +35,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
+                  // Clash of Clans text
                   Text(
                     'Clash of Clans',
                     style: TextStyle(
@@ -41,6 +43,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         fontSize: 28.sp,
                         fontWeight: FontWeight.w500),
                   ),
+
+                  // Subtitle text
                   Text(
                     'Profile Search Engine',
                     style: TextStyle(
@@ -48,13 +52,21 @@ class _SearchScreenState extends State<SearchScreen> {
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w400),
                   ),
+
+                  // SizedBox for spacing
                   SizedBox(
                     height: 20.h,
                   ),
+
+                  // SearchBar widget
                   const SearchBar(),
+
+                  // SizedBox for spacing
                   SizedBox(
                     height: 10.h,
                   ),
+
+                  // Observer for ProfileStore
                   Observer(
                     builder: (_) => _profileStore.isError
                         ? Padding(
@@ -72,6 +84,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 ],
               ),
 
+              // Top orange circle
               Observer(builder: (_) {
                 return Positioned(
                   right: 150.w,
@@ -89,6 +102,7 @@ class _SearchScreenState extends State<SearchScreen> {
                 );
               }),
 
+              // Bottom orange circle
               Observer(builder: (_) {
                 return Positioned(
                   left: 150.w,

@@ -19,8 +19,8 @@ class _SearchBarState extends State<SearchBar> {
   // Text controller for the search bar
   final TextEditingController _controller = TextEditingController();
 
-  // Debouncer for the search bar
-  Debouncer debouncer = Debouncer(milliseconds: 2500);
+ /* // Debouncer for the search bar
+  Debouncer debouncer = Debouncer(milliseconds: 2500);*/
 
   // Profile Store for the search bar
   final _profileStore = getIt.get<ProfileStore>();
@@ -47,15 +47,19 @@ class _SearchBarState extends State<SearchBar> {
     super.dispose();
   }
 
+  // Error text for the search bar writing
   String? get _errorText {
+    // If the text is empty and the focus node has focus
     if (_valueText.isEmpty && _focusNode.hasFocus) {
       return 'Cant\'t be empty';
     }
-    if (_valueText.length < 6 && _focusNode.hasFocus) {
-      return 'Must be at least 6 characters';
-    }
+    // If the text contains # and the focus node has focus
     if (_valueText.contains('#') && _focusNode.hasFocus) {
       return 'Must not contain #';
+    }
+    // If the text is less than 6 characters and the focus node has focus
+    if (_valueText.length < 6 && _focusNode.hasFocus) {
+      return 'Must be at least 6 characters';
     }
     // If no error, return null
     return null;
@@ -86,12 +90,18 @@ class _SearchBarState extends State<SearchBar> {
 
                   // validator for the search bar
                   validator: (value) {
+
+                    // If the value is empty, return the error text
                     if (value!.isEmpty) {
                       return 'Cant\'t be empty';
                     }
+
+                    // If the value is less than 6 characters, return the error text
                     if (value.length < 6) {
                       return 'Must be at least 6 characters';
                     }
+
+                    // If the value contains #, return the error text
                     if (value.contains('#')) {
                       return 'Must not contain #';
                     }
@@ -101,6 +111,8 @@ class _SearchBarState extends State<SearchBar> {
                     setState(() {
                       // Update the value of the text
                       _valueText = value.toString();
+
+                      // set iserror to false
                         _profileStore.isError = false;
                     });
                   },
@@ -128,6 +140,8 @@ class _SearchBarState extends State<SearchBar> {
             }
           ),
         ),
+
+        // Search button
         Observer(
           builder: (_) {
             return Positioned(
@@ -138,8 +152,11 @@ class _SearchBarState extends State<SearchBar> {
                 child: IconButton(
                   icon: const Icon(Icons.search,color: Colors.white,),
                   onPressed: () {
+
+                    // If the form is valid, get the profile data
                     if(formKey.currentState!.validate()) {
                       _getPlayerData(_controller.text, context, () {
+                        // Navigate to the profile screen if the profile data is fetched successfully
                         if(_profileStore.isError == false) {
                           Navigator.push(
                             context,
