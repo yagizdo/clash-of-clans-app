@@ -1,21 +1,19 @@
 import 'package:clash_of_clans_app/constants/app_string.dart';
 import 'package:clash_of_clans_app/core/profileStore.dart';
 import 'package:clash_of_clans_app/locator.dart';
-import 'package:clash_of_clans_app/widgets/home/error_comp.dart';
-import 'package:clash_of_clans_app/widgets/home/profile_ui/profile_comp.dart';
-import 'package:clash_of_clans_app/widgets/home/search/searchbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+import '../widgets/search/searchbar.dart';
+
+class SearchScreen extends StatefulWidget {
+  const SearchScreen({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _HomeState extends State<Home> {
+class _SearchScreenState extends State<SearchScreen> {
   final ProfileStore _profileStore = getIt.get<ProfileStore>();
 
   @override

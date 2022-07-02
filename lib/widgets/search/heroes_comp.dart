@@ -1,9 +1,9 @@
 import 'package:clash_of_clans_app/constants/app_colors.dart';
-import 'package:clash_of_clans_app/widgets/home/profile_ui/hero_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../model/profile.dart';
+import '../../model/profile.dart';
+import 'hero_card.dart';
 
 class HeroesComp extends StatelessWidget {
   HeroesComp({Key? key,required this.profile}) : super(key: key);

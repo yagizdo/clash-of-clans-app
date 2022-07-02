@@ -2,7 +2,7 @@ import 'package:clash_of_clans_app/locator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../../core/profileStore.dart';
+import '../../core/profileStore.dart';
 import 'custom_debouncer.dart';
 
 class SearchBar extends StatefulWidget {
