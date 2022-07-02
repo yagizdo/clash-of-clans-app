@@ -1,5 +1,7 @@
+import 'package:clash_of_clans_app/constants/app_colors.dart';
 import 'package:clash_of_clans_app/locator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/profileStore.dart';
@@ -61,56 +63,70 @@ class _SearchBarState extends State<SearchBar> {
         SizedBox(
           width: 315.w,
           height: 69.h,
-          child: TextField(
-            // Controller for the search bar
-            controller: _controller,
+          child: Observer(
+            builder: (_) {
+              return TextField(
+                style: TextStyle(
+                  fontSize: 17.sp,
+                  fontWeight: FontWeight.w400,
+                ),
+                // Controller for the search bar
+                controller: _controller,
 
-            // Focus node for the search bar
-            focusNode: _focusNode,
+                // Focus node for the search bar
+                focusNode: _focusNode,
 
-            // On changed for the search bar
-            onChanged: (value) {
-              setState(() {
-                // Update the value of the text
-                _valueText = value.toString();
+                // On changed for the search bar
+                onChanged: (value) {
+                  setState(() {
+                    // Update the value of the text
+                    _valueText = value.toString();
 
-                if (_errorText == null) {
-                  // Run the debouncer
-                  debouncer.run(() {
-
+                    if (_errorText == null) {
+                      _profileStore.isError = false;
+                    }
                   });
-                }
-              });
-            },
+                },
 
-            // Decoration for the search bar
-            decoration: InputDecoration(
-              helperText: ' ',
-              fillColor: Color(0xFFF0F3F7),
-              filled: true,
-              errorText: _errorText,
-              border: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.circular(30.w),
-              ),
-              labelText: 'Player Tag',
-            ),
+                // Decoration for the search bar
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(horizontal: 20.w),
+                  labelStyle: TextStyle(
+                    fontSize: 17.sp,
+                    fontWeight: FontWeight.w400,
+                    color: _profileStore.isError ? Colors.red : black,
+                  ),
+                  helperText: ' ',
+                  fillColor: const Color(0xFFF0F3F7),
+                  filled: true,
+                  errorText: _errorText,
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(30.w),
+                  ),
+                  labelText: 'Player Tag',
+                ),
+              );
+            }
           ),
         ),
-        Positioned(
-          child: ElevatedButton(
-            // On pressed for the search bar
-            onPressed: () {
-              _getPlayerData(_controller.text);
-            },
-            style: ElevatedButton.styleFrom(
-              elevation: 0,
-              primary: Color(0xFFFFB82A),
-              shape: const CircleBorder(), //<-- SEE HERE
-              fixedSize: Size(20.w, 50.h),
-            ),
-            child: const Icon(Icons.search),
-          ),
+        Observer(
+          builder: (_) {
+            return Positioned(
+              top: 0.h,
+              child: CircleAvatar(
+                backgroundColor: _profileStore.isError ? Colors.red : const Color(0xFFFFB82A),
+                radius: 22.w,
+                child: IconButton(
+                  icon: const Icon(Icons.search,color: Colors.white,),
+                  onPressed: () {
+                    _getPlayerData(_controller.text);
+                    _focusNode.unfocus();
+                  },
+                ),
+              ),
+            );
+          }
         ),
       ],
     );
