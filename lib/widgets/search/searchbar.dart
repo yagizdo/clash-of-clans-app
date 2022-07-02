@@ -32,8 +32,10 @@ class _SearchBarState extends State<SearchBar> {
   String _valueText = '';
 
   // Get Profile data
-  Future<void> _getPlayerData(String tag) async {
+  // Build context and void callback cause the future to be executed in the background thread and not the main thread which is what the future is executed in.
+  Future<void> _getPlayerData(String tag, BuildContext context, VoidCallback onSuccess) async {
     await _profileStore.fetchProfile(tag);
+    onSuccess.call();
   }
 
   @override
@@ -116,17 +118,21 @@ class _SearchBarState extends State<SearchBar> {
             return Positioned(
               top: 0.h,
               child: CircleAvatar(
-                backgroundColor: _profileStore.isError ? Colors.red : const Color(0xFFFFB82A),
+                backgroundColor: _profileStore.isError ? red : const Color(0xFFFFB82A),
                 radius: 22.w,
                 child: IconButton(
                   icon: const Icon(Icons.search,color: Colors.white,),
                   onPressed: () {
-                    _getPlayerData(_controller.text).whenComplete(() => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ProfileScreen(),
-                      ),
-                    ));
+                    _getPlayerData(_controller.text, context, () {
+                      if(_profileStore.isError == false) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProfileScreen(),
+                          ),
+                        );
+                      }
+                    });
                     _focusNode.unfocus();
                   },
                 ),

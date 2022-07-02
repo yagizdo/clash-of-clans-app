@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../constants/app_colors.dart';
 import '../core/profileStore.dart';
 import '../locator.dart';
 
@@ -24,7 +26,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            Text('Profile Screen ${profileStore.profile?.name}'),
+            Text('${profileStore.profile?.name}',style: TextStyle(fontSize: 38.sp,fontWeight: FontWeight.w800,color: brown),),
           ],
         ),
       ),

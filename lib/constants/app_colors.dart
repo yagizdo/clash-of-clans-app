@@ -7,6 +7,10 @@ const appbarColor = Color(0xFFD7A640);
 const white = Color(0xFFFFFFFF);
 const grey = Color(0xFF787878);
 
+const brown = Color(0xFF835234);
+const red = Color(0xFFCC0000);
+const orange = Color(0xFFFFB82A);
+
 
 class AppTheme {
   final appTheme = ThemeData(
