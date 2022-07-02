@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 const black = Color(0xFF101823);
-const scaffoldBackground = Color(0xFFEFE1C4);
+const scaffoldBackground = Color(0xFFFFFFFF);
 const appbarColor = Color(0xFFD7A640);
 const white = Color(0xFFFFFFFF);
 const grey = Color(0xFF787878);

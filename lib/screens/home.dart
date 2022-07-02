@@ -1,6 +1,5 @@
 import 'package:clash_of_clans_app/constants/app_string.dart';
 import 'package:clash_of_clans_app/core/profileStore.dart';
-import 'package:clash_of_clans_app/core/profile_client.dart';
 import 'package:clash_of_clans_app/locator.dart';
 import 'package:clash_of_clans_app/widgets/home/error_comp.dart';
 import 'package:clash_of_clans_app/widgets/home/profile_ui/profile_comp.dart';
@@ -22,49 +21,68 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(homeTitle),
-      ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // SizeBox is used to add space between widgets
-            SizedBox(height: 20.h),
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: MediaQuery.of(context).size.height,
+            minWidth: MediaQuery.of(context).size.width,
+          ),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              // SearchBar widget
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Clash of Clans',
+                    style: TextStyle(
+                        color: const Color(0xFF835234),
+                        fontSize: 28.sp,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  Text(
+                    'Profile Search Engine',
+                    style: TextStyle(
+                        color: const Color(0xFF835234),
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w400),
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  const SearchBar(),
+                ],
+              ),
 
-            // SearchBar widget
-            const SearchBar(),
+              Positioned(
+                right: 150.w,
+                bottom: 550.h,
+                child: Container(
+                  height: 434.h,
+                  width: 434.w,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFFFB82A),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
 
-            // Profile Part
-            Observer(builder: (_) {
-              return _profileStore.isLoading
-                  ? const Center(
-                      child: CircularProgressIndicator(),
-                    )
-                  : Padding(
-                      padding: EdgeInsets.all(10.w),
-                      child: Column(
-                        children: [
-                          _profileStore.profile == null
-                              ?
-                              // Empty container
-                              Container()
-                              :
-                              // Error container
-                              _profileStore.isError
-                                  ?
-                                  // Error container
-                                  const ErrorComp()
-                                  :
-                                  // Profile container
-                                  ProfileComp(
-                                      profile: _profileStore.profile,
-                                    ),
-                        ],
-                      ),
-                    );
-            }),
-          ],
+              Positioned(
+                left: 150.w,
+                top: 600.h,
+                child: Container(
+                  height: 434.h,
+                  width: 434.w,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFFFB82A),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
