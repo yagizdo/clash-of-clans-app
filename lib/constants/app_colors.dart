@@ -11,6 +11,8 @@ const brown = Color(0xFF835234);
 const red = Color(0xFFCC0000);
 const orange = Color(0xFFFFB82A);
 
+const grey2 = Color(0xFF7E909D);
+
 
 class AppTheme {
   final appTheme = ThemeData(
