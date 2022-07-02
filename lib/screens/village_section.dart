@@ -18,7 +18,8 @@ class VillageSection extends StatelessWidget {
 // Profile data from the Profile Store
     final Profile? _profile = _profileStore.profile;
 
-    return Expanded(
+    return SizedBox(
+      height: 300.h,
       child: GridView(
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
