@@ -10,6 +10,7 @@ const grey = Color(0xFF787878);
 const brown = Color(0xFF835234);
 const red = Color(0xFFCC0000);
 const orange = Color(0xFFFFB82A);
+const clanOrange = Color(0xFFF8BB54);
 
 const grey2 = Color(0xFF7E909D);
 
