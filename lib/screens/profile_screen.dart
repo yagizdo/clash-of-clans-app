@@ -1,4 +1,5 @@
 import 'package:clash_of_clans_app/constants/app_string.dart';
+import 'package:clash_of_clans_app/screens/village_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -49,6 +50,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   const LeagueSection(),
                 ],
               ),
+
+              // SizedBox to make space between the sections
+              SizedBox(
+                height: 15.h,
+              ),
+
+              // Village Section
+              const VillageSection(),
             ],
           ),
         ),

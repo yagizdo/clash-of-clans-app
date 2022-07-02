@@ -1,6 +1,9 @@
 const homeTitle = 'Home';
 const appName = 'Clash of Clans App';
 
+// Defense Shield
+const defenseShield = 'lib/img/defense_shield.png';
+
 // Heroes
 const barbarianKing = 'lib/img/heroes/barbarian_king.webp';
 const archerQueen = 'lib/img/heroes/archer_queen.webp';
@@ -57,7 +60,7 @@ const sneaky_archer = 'lib/img/troops/Sneaky_Archer.webp';
 const boxer_giant = 'lib/img/troops/Boxer_Giant.webp';
 const beta_minion = 'lib/img/troops/Beta_Minion.webp';
 const bomber = 'lib/img/troops/Bomber.webp';
-const cannon_cart = 'lib/img/troops/Cannon_Cart.webp';
+const cannon_cart = 'lib/img/troops/cannon_cart.png';
 const night_witch = 'lib/img/troops/Night_Witch.webp';
 const drop_ship = 'lib/img/troops/Drop_Ship.webp';
 const super_pekka = 'lib/img/troops/Super_Pekka.webp';

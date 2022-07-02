@@ -13,6 +13,7 @@ const orange = Color(0xFFFFB82A);
 const clanOrange = Color(0xFFF8BB54);
 const leaguePurple = Color(0xFF8624C5);
 const leagueTextPurple = Color(0xFF7E25B7);
+const villageGridColor = Color(0xFFF6F7F8);
 
 const grey2 = Color(0xFF7E909D);
 
