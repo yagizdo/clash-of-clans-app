@@ -22,7 +22,7 @@ class LeagueSection extends StatelessWidget {
       width: 103.w,
       height: 103.h,
       decoration: BoxDecoration(
-        color: leaguePurple.withOpacity(0.5),
+        color: leaguePurple.withOpacity(0.3),
         borderRadius: BorderRadius.circular(10.w),
       ),
       child: Column(
