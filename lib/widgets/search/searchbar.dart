@@ -1,5 +1,6 @@
 import 'package:clash_of_clans_app/constants/app_colors.dart';
 import 'package:clash_of_clans_app/locator.dart';
+import 'package:clash_of_clans_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -120,7 +121,12 @@ class _SearchBarState extends State<SearchBar> {
                 child: IconButton(
                   icon: const Icon(Icons.search,color: Colors.white,),
                   onPressed: () {
-                    _getPlayerData(_controller.text);
+                    _getPlayerData(_controller.text).whenComplete(() => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const ProfileScreen(),
+                      ),
+                    ));
                     _focusNode.unfocus();
                   },
                 ),

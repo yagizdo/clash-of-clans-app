@@ -50,4 +50,8 @@ abstract class _ProfileStore with Store {
 
     print(profile?.name);
   }
+
+  dispose() {
+    profile = null;
+  }
 }
