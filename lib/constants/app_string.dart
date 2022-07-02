@@ -24,6 +24,7 @@ const dragon = 'lib/img/troops/Dragon.webp';
 const pekka = 'lib/img/troops/Pekka.webp';
 const baby_dragon = 'lib/img/troops/Baby_Dragon.webp';
 const miner = 'lib/img/troops/Miner.webp';
+const witch = 'lib/img/troops/Witch.webp';
 const electro_dragon = 'lib/img/troops/Electro_Dragon.webp';
 const yeti = 'lib/img/troops/Yeti.webp';
 const dragon_rider = 'lib/img/troops/Dragon_Rider.webp';
@@ -51,7 +52,7 @@ const inferno_dragon = 'lib/img/troops/Inferno_Dragon.webp';
 const super_minion = 'lib/img/troops/Super_Minion.webp';
 const super_valkyrie = 'lib/img/troops/Super_Valkyrie.webp';
 const super_witch = 'lib/img/troops/Super_Witch.webp';
-const ice_hount = 'lib/img/troops/Ice_Hount.webp';
+const ice_hound = 'lib/img/troops/Ice_Hound.webp';
 const super_bowler = 'lib/img/troops/Super_Bowler.webp';
 
 // Builder Base Troops

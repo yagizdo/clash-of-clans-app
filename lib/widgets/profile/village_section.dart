@@ -3,9 +3,9 @@ import 'package:clash_of_clans_app/constants/app_string.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../core/profileStore.dart';
-import '../locator.dart';
-import '../model/profile.dart';
+import '../../core/profileStore.dart';
+import '../../locator.dart';
+import '../../model/profile.dart';
 
 class VillageSection extends StatelessWidget {
   const VillageSection({Key? key}) : super(key: key);
@@ -19,7 +19,7 @@ class VillageSection extends StatelessWidget {
     final Profile? _profile = _profileStore.profile;
 
     return SizedBox(
-      height: 300.h,
+      height: 250.h,
       child: GridView(
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),

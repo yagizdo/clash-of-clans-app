@@ -1,5 +1,5 @@
 import 'package:clash_of_clans_app/constants/app_string.dart';
-import 'package:clash_of_clans_app/screens/village_section.dart';
+import 'package:clash_of_clans_app/widgets/profile/village_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,6 +9,7 @@ import '../locator.dart';
 import '../widgets/profile/clan_section.dart';
 import '../widgets/profile/leauge_section.dart';
 import '../widgets/profile/profile_section.dart';
+import '../widgets/profile/troops_section.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -58,6 +59,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
               // Village Section
               const VillageSection(),
+
+              // Troops Section
+              const TroopsSection(),
             ],
           ),
         ),
