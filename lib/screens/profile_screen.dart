@@ -1,9 +1,7 @@
-import 'package:clash_of_clans_app/constants/app_string.dart';
 import 'package:clash_of_clans_app/widgets/profile/village_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../constants/app_colors.dart';
 import '../core/profileStore.dart';
 import '../locator.dart';
 import '../widgets/profile/clan_section.dart';
@@ -32,7 +30,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.only(top: 10.h,left: 20.w),
+            padding: EdgeInsets.only(top: 10.h,left: 17.5.w),
             child: Column(
               children: [
                 const ProfileSection(),

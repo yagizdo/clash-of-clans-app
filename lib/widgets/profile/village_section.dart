@@ -20,28 +20,31 @@ class VillageSection extends StatelessWidget {
 
     return SizedBox(
       height: 250.h,
-      child: GridView(
-        gridDelegate:
-            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
-        children: [
-          // Town Hall Level
-          villageSectionGrid(_profile!.townHallLevel.toString(),'Town Hall Level','lib/img/town_halls/Town_Hall_${_profile.townHallLevel}.webp'),
+      child: Padding(
+        padding: EdgeInsets.only(right: 20.w),
+        child: GridView(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+          children: [
+            // Town Hall Level
+            villageSectionGrid(_profile!.townHallLevel.toString(),'Town Hall Level','lib/img/town_halls/Town_Hall_${_profile.townHallLevel}.webp'),
 
-          // Tropies Count
-          villageSectionGrid(_profile.trophies.toString(),'Trophies','lib/img/Trophy.png'),
+            // Tropies Count
+            villageSectionGrid(_profile.trophies.toString(),'Trophies','lib/img/Trophy.png'),
 
-          // Best Trophies
-          villageSectionGrid(_profile.bestTrophies.toString(),'Best Trophies','lib/img/Trophy.png'),
+            // Best Trophies
+            villageSectionGrid(_profile.bestTrophies.toString(),'Best Trophies','lib/img/Trophy.png'),
 
-          // Attak Wins
-          villageSectionGrid(_profile.attackWins.toString(),'Attack Wins',cannon_cart),
+            // Attak Wins
+            villageSectionGrid(_profile.attackWins.toString(),'Attack Wins',cannon_cart),
 
-          // Defense Wins
-          villageSectionGrid(_profile.defenseWins.toString(),'Defense Wins',defenseShield),
+            // Defense Wins
+            villageSectionGrid(_profile.defenseWins.toString(),'Defense Wins',defenseShield),
 
-          // Builder hall level
-          villageSectionGrid(_profile.builderHallLevel.toString(),'Builder Hall Level','lib/img/town_halls/Builder_Hall_${_profile.builderHallLevel}.webp'),
-        ],
+            // Builder hall level
+            villageSectionGrid(_profile.builderHallLevel.toString(),'Builder Hall Level','lib/img/town_halls/Builder_Hall_${_profile.builderHallLevel}.webp'),
+          ],
+        ),
       ),
     );
   }
@@ -51,6 +54,7 @@ Widget villageSectionGrid(String data,String title,String img_url) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 7.h),
     child: Container(
+      alignment: Alignment.center,
       width: 104.w,
       height: 104.h,
       decoration: BoxDecoration(
@@ -59,6 +63,7 @@ Widget villageSectionGrid(String data,String title,String img_url) {
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Image.asset(img_url,fit: BoxFit.cover,scale: title == 'Town Hall Level' || title == 'Builder Hall Level' ? 2.5 : 1),
           Text(

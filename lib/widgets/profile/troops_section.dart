@@ -121,90 +121,97 @@ class TroopsSection extends StatelessWidget {
     return Column(
       children: [
         customTroopsList(heroes, 'Heroes', troops),
+        SizedBox(height: 13.h),
         customTroopsList(villageTroops, 'Village Troops', troops),
+        SizedBox(height: 13.h),
         customTroopsList(superTroops, 'Super Troops', troops),
+        SizedBox(height: 13.h),
         customTroopsList(builderHallTroops, 'Builder Hall Troops', troops),
+        SizedBox(height: 13.h),
       ],
     );
   }
 
   Widget customTroopsList(List? list, String title, var troopsObject) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: EdgeInsets.only(left: 5.w),
-          child: Text(title,
-              style: TextStyle(
-                  fontSize: 30.sp, fontWeight: FontWeight.w600, color: brown)),
-        ),
-        SizedBox(
-          height: 175.h,
-          width: 1.sw,
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemCount: list!.length,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-                child: Container(
-                  width: 110.w,
-                  height: 145.h,
-                  decoration: BoxDecoration(
-                    color: villageGridColor,
-                    borderRadius: BorderRadius.circular(10.w),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 30.w, top: 5.h),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          troopsObject[list[index].name! ?? ''],
-                          scale: title == 'Super Troops'
-                              ? 3.5
-                              : title == 'Builder Hall Troops'
-                                  ? 3
-                                  : title == 'Heroes'
-                                      ? 4
-                                      : 2,
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Text(
-                          list[index].name ?? '',
-                          style: TextStyle(
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w600,
-                              color: brown),
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        Text(
-                          'Level : ${list[index].level ?? ''}',
-                          style: TextStyle(
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w600,
-                              color: brown),
-                        ),
-                        Text(
-                          'Max Level : ${list[index].maxLevel ?? ''}',
-                          style: TextStyle(
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w600,
-                              color: brown),
-                        ),
-                      ],
+    return Padding(
+      padding: EdgeInsets.only(right: 20.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.only(left: 5.w),
+            child: Text(title,
+                style: TextStyle(
+                    fontSize: 30.sp, fontWeight: FontWeight.w600, color: brown)),
+          ),
+          SizedBox(
+            height: 165.h,
+            width: 1.sw,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: list!.length,
+              itemBuilder: (context, index) {
+                return Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                  child: Container(
+                    width: 110.w,
+                    height: 145.h,
+                    decoration: BoxDecoration(
+                      color: villageGridColor,
+                      borderRadius: BorderRadius.circular(10.w),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(right: 30.w, top: 5.h),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Image.asset(
+                            troopsObject[list[index].name! ?? ''],
+                            scale: title == 'Super Troops'
+                                ? 3.5
+                                : title == 'Builder Hall Troops'
+                                    ? 3
+                                    : title == 'Heroes'
+                                        ? 4
+                                        : 2,
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text(
+                            list[index].name ?? '',
+                            style: TextStyle(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                color: brown),
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          Text(
+                            'Level : ${list[index].level ?? ''}',
+                            style: TextStyle(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                color: brown),
+                          ),
+                          Text(
+                            'Max Level : ${list[index].maxLevel ?? ''}',
+                            style: TextStyle(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w600,
+                                color: brown),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
