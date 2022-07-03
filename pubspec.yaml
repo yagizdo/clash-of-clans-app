@@ -69,6 +69,10 @@ flutter:
   assets:
     - .env
     - lib/img/
+    - lib/img/heroes/
+    - lib/img/spells/
+    - lib/img/town_halls/
+    - lib/img/troops/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
