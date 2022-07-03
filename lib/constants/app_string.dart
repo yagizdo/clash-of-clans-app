@@ -5,11 +5,11 @@ const appName = 'Clash of Clans App';
 const defenseShield = 'lib/img/defense_shield.png';
 
 // Heroes
-const barbarianKing = 'lib/img/heroes/barbarian_king.webp';
-const archerQueen = 'lib/img/heroes/archer_queen.webp';
+const barbarianKing = 'lib/img/heroes/barbarian_king.jpg';
+const archerQueen = 'lib/img/heroes/archer_queen.jpeg';
 const battleMachine = 'lib/img/heroes/battle_machine.webp';
-const grandWarden = 'lib/img/heroes/grand_warden.webp';
-const royalChampion = 'lib/img/heroes/royal_champion.webp';
+const grandWarden = 'lib/img/heroes/grand_warden.jpeg';
+const royalChampion = 'lib/img/heroes/royal_champions.png';
 
 // Elixir Troops
 const barbarian = 'lib/img/troops/Barbarian.webp';

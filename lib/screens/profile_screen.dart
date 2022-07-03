@@ -29,40 +29,42 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(top: 10.h,left: 20.w),
-          child: Column(
-            children: [
-              const ProfileSection(),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(top: 10.h,left: 20.w),
+            child: Column(
+              children: [
+                const ProfileSection(),
 
-              // SizedBox to make space between the sections
-              SizedBox(
-                height: 15.h,
-              ),
+                // SizedBox to make space between the sections
+                SizedBox(
+                  height: 15.h,
+                ),
 
-              // Clan and Leugue Section
-              Row(
-                children: [
-                  const ClanSection(),
-                  SizedBox(
-                    width: 20.w,
-                  ),
-                  const LeagueSection(),
-                ],
-              ),
+                // Clan and Leugue Section
+                Row(
+                  children: [
+                    const ClanSection(),
+                    SizedBox(
+                      width: 20.w,
+                    ),
+                    const LeagueSection(),
+                  ],
+                ),
 
-              // SizedBox to make space between the sections
-              SizedBox(
-                height: 15.h,
-              ),
+                // SizedBox to make space between the sections
+                SizedBox(
+                  height: 15.h,
+                ),
 
-              // Village Section
-              const VillageSection(),
+                // Village Section
+                const VillageSection(),
 
-              // Troops Section
-              const TroopsSection(),
-            ],
+                // Troops Section
+                const TroopsSection(),
+              ],
+            ),
           ),
         ),
       ),
