@@ -148,58 +148,55 @@ class TroopsSection extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                 child: Container(
-                  width: 125.w,
+                  width: 110.w,
                   height: 145.h,
                   decoration: BoxDecoration(
                     color: villageGridColor,
                     borderRadius: BorderRadius.circular(10.w),
                   ),
                   child: Padding(
-                    padding: EdgeInsets.only(left: 10.w),
-                    child: Padding(
-                      padding: EdgeInsets.only(right: 30.w, top: 5.h),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            troopsObject[list[index].name! ?? ''],
-                            scale: title == 'Super Troops'
-                                ? 3.5
-                                : title == 'Builder Hall Troops'
-                                    ? 3
-                                    : title == 'Heroes'
-                                        ? 4
-                                        : 2,
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Text(
-                            list[index].name ?? '',
-                            style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w600,
-                                color: brown),
-                          ),
-                          SizedBox(
-                            height: 10.h,
-                          ),
-                          Text(
-                            'Level : ${list[index].level ?? ''}',
-                            style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w600,
-                                color: brown),
-                          ),
-                          Text(
-                            'Max Level : ${list[index].maxLevel ?? ''}',
-                            style: TextStyle(
-                                fontSize: 11.sp,
-                                fontWeight: FontWeight.w600,
-                                color: brown),
-                          ),
-                        ],
-                      ),
+                    padding: EdgeInsets.only(right: 30.w, top: 5.h),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          troopsObject[list[index].name! ?? ''],
+                          scale: title == 'Super Troops'
+                              ? 3.5
+                              : title == 'Builder Hall Troops'
+                                  ? 3
+                                  : title == 'Heroes'
+                                      ? 4
+                                      : 2,
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Text(
+                          list[index].name ?? '',
+                          style: TextStyle(
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w600,
+                              color: brown),
+                        ),
+                        SizedBox(
+                          height: 10.h,
+                        ),
+                        Text(
+                          'Level : ${list[index].level ?? ''}',
+                          style: TextStyle(
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w600,
+                              color: brown),
+                        ),
+                        Text(
+                          'Max Level : ${list[index].maxLevel ?? ''}',
+                          style: TextStyle(
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w600,
+                              color: brown),
+                        ),
+                      ],
                     ),
                   ),
                 ),
